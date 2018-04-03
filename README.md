@@ -12,46 +12,52 @@ Vanilla JavaScript, lodash.js for Demo: HTML5, CSS3
 
 ## Implementation
 
-The crux of the game is in the combining of the tiles, done by a method I named collapse. Initially, I tried to iterate through the array, skip over zeros (empty spaces), and add any subsequent like digits to a result array, but I kept ending up with an OBOE. A colleague pointed out that I was doing a lot of logic to skip the zeros, and I could likely simplify everything by removing the zeros before I start any processing. After this realization, the solution became obvious.
+One key piece of functionality I wanted to replicate was the pure versatility of the $ in jQuery. It can be used execute callbacks once the document is loaded, find elements on the page by any of the regular selectors, or create new elements. I did this by typechecking the input, and then performing the appropriate action based on that.
 
 ```javascript
-collapse(arr){
-  const newArr = [];
-  const resultArr = [];
-
-  arr.forEach(el => {
-    if (el) {newArr.push(el);}
-  });
-
-  for(let i = 0; i < newArr.length; i++){
-    if (newArr[i] === newArr[i + 1]){
-      resultArr.push(newArr[i] * 2);
-      this.potScore += (newArr[i] * 2);
-      i++;
-    } else{
-      resultArr.push(newArr[i]);
+window.$r = function(arg) {
+  let DOMArg;
+  if (arg instanceof HTMLElement) {
+    DOMArg = [arg];
+    return new DOMNodeCollection(DOMArg);
+  } else if (typeof arg === "function") {
+    if (documentLoaded) {
+      arg();
+    } else {
+      eventQueueue.push(arg);
     }
+  } else {
+    const elList = document.querySelectorAll(arg);
+    DOMArg = Array.from(elList);
+    return new DOMNodeCollection(DOMArg);
   }
-
-  while(resultArr.length < this.size){
-    resultArr.push(0);
-  }
-  return resultArr;
-}
+};
 ```
 
-The other tricky part was actually using the collapse function. The board is stored in a 2d 4x4 array caled the grid, but this means that the grid can be directly fed into the method only for a left movement . For every other direction, I had to first do some combination of transforming or reversing the arrays, (and then undo those changes before setting the result as the new grid) as shown here
+Once I had each node in an object, I had to actually perform actions on each of them. some of these were trickier than others (especially attr, because it can be used in so many different ways), but the other one I wanted to highlight was adding (and removing) event listeners. To remove an event listener using vanilla JavaScript, you have to pass to the function the specific callback that you used when creating it. Sometimes, this is simple, because you defined the callback elsewhere and still have access to it, but oftentimes, the callback is defined as an anonymous function, so it doesn't even exist to be passed to the remove function. I solved this issue by storing the specific callback _on the element itself_ in an object I created, with the trigger for the callback as the key. This way, there is an easy way to see all callbacks on an element, and remove a specific callback by passing its trigger to .off()
 
 ```javascript
-case 'down':
-  modArr = zip(...modArr);
-  modArr = modArr.map(row => reverse(row));
-  collArr = modArr.map(tRow => this.collapse(tRow));
-  collArr = collArr.map(row => reverse(row));
-  collArr = unzip(collArr);
-  break;
+on(trigger, callback) {
+  this.arr.forEach(el => {
+    el.addEventListener(trigger, callback);
+    if (el.eventTriggers) {
+      el.eventTriggers[trigger] = callback;
+    } else {
+      el.eventTriggers = { [trigger]: callback };
+    }
+  });
+}
+
+off(trigger) {
+  this.arr.forEach(el => {
+    const callback = el.eventTriggers[trigger];
+    el.removeEventListener(trigger, callback);
+    delete el.eventTriggers[trigger];
+  });
+}
+}
 ```
 
 ## Future Updates
 
-Future versions will include a lightweight firebase backend for high score tracking, better formatting for mobile versions, touch input for supported devices, and movement via trackpad swipes (via PointerLockAPI). I would also like to add in a variable board size, likely in conjunction with the mobile formatting.
+One of the wonderful parts of jQuery that I have not yet added is Promises. Right now, you can define actions on success or failure of an AJAX request in the request itself, but the ability to chain together promises onto the end of them is very nice, and I want to implement that in a future version.
