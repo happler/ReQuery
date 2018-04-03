@@ -1,0 +1,187 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ghostwhite;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 1px solid lightgrey;
+}
+
+.row ul {
+  display: flex;
+  flex-direction: row;
+}
+.cell {
+  width: 50px;
+  height: 50px;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 44px;
+}
+
+.fixed {
+  font-weight: bold;
+  color: grey;
+}
+
+.mutable {
+}
+
+.sub-row {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.row-0,
+.row-3,
+.row-6 {
+  border-top: 2px solid black;
+}
+
+.row-8 {
+  border-bottom: 2px solid black;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: ghostwhite;
+  margin: 15px;
+}
+
+header > * {
+  padding: 5px;
+  margin: 5px;
+}
+.add-num {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-num__button {
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.solution-div {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.selected {
+  background-color: red;
+}
+
+.mutable:hover {
+  background-color: lightblue;
+}
+
+.reset,
+.check,
+.weather {
+  padding: 2px;
+  border: 1px solid black;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.instructions {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.solved-status {
+  text-align: center;
+  padding-top: 12px;
+}
+
+.title {
+  font-family: "Courgette", cursive;
+  background-color: ghostwhite;
+  font-size: 36px;
+  padding: 5px;
+}
+
+.thunderstorm {
+  background-image: url("../images/thunderstorm.jpg");
+}
+
+.drizzle {
+  background-image: url("../images/drizzle.jpg");
+}
+
+.rain {
+  background-image: url("../images/rain.jpg");
+}
+
+.snow {
+  background-image: url("../images/snow.jpg");
+}
+
+.clear {
+  background-image: url("../images/clear.jpg");
+}
+
+.hazy {
+  background-image: url("../images/hazy.jpg");
+}
+
+.cloudy {
+  background-image: url("../images/cloudy.jpg");
+}
+
+.extreme {
+  background-image: url("../images/extreme.jpg");
+}
+
+.breezy {
+  background-image: url("../images/breezy.jpg");
+}
+
+.portfolio,
+.portfolio-by {
+  font-size: 24px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.portfolio:hover {
+  text-decoration: underline;
+  color: darkgrey;
+}
+
+.svg-inline--fa:hover {
+  color: darkgrey;
+}
+
+.fab {
+  width: 50px;
+}
+
+.personal-links {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  color: black;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
