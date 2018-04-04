@@ -10,7 +10,7 @@ main {
   flex-direction: row;
   border-left: 2px solid black;
   border-right: 2px solid black;
-  border-bottom: 1px solid lightgrey;
+  /* border-bottom: 1px solid lightgrey; */
 }
 
 .row ul {
@@ -20,8 +20,7 @@ main {
 .cell {
   width: 50px;
   height: 50px;
-  border-left: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;
+  border: 1px solid lightgrey;
   text-align: center;
   vertical-align: middle;
   font-size: 44px;
@@ -39,14 +38,18 @@ main {
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-.row-0,
+
 .row-3,
 .row-6 {
   border-top: 2px solid black;
 }
 
+.row-0 {
+  border-top: 3px solid black;
+}
+
 .row-8 {
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid black;
 }
 
 header {
@@ -155,7 +158,6 @@ body {
 
 .title {
   text-align: center;
-
   font-family: "Courgette", cursive;
   font-size: 36px;
   padding: 5px;
