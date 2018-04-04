@@ -12,13 +12,13 @@ Vanilla JavaScript, lodash.js for Demo: HTML5, CSS3
 
 ## How to Use
 
-To use this tool, simply download [this file](..blob/master/lib/requery.js) and put it in your project. In the head of your HTML, include
+To use this tool, simply download [this file](..blob/master/lib/requery.js) and put it in your project. In the head of your index.html, include
 
 ```html
 <script type="text/javascript" src="./__path__/__to__/__file__/requery.js"> </script>
 ```
 
-before your entry point file. Now you can use ReQuery!
+before your JavaScript entry point script tag. Now you can use ReQuery! Don't worry if your linter doesn't like `$r`, it'll exist once you load the page.
 
 ## Implementation
 
