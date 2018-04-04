@@ -10,7 +10,7 @@ DOM manipulation with vanilla JavaScript, while easier now than in the past, can
 
 Vanilla JavaScript, lodash.js for Demo: HTML5, CSS3
 
-## How to Use
+## Setup instructions
 
 To use this tool, simply download [this file](..blob/master/lib/requery.js) and put it in your project. In the head of your index.html, include
 
