@@ -65,8 +65,9 @@ class Game {
       $r.ajax({
         type: "GET",
         url:
-          "https://api.openweathermap.org/data/2.5/weather?id=5128638&appid=bcb83c4b54aee8418983c2aff3073b3b",
+          "https://api.openweathermap.org/data/2.5/weather?lat=40.7128&lon=-74.0060&appid=bcb83c4b54aee8418983c2aff3073b3b",
         success(data) {
+          console.log(data);
           weatherBackground(data.weather[0].id);
         },
         error() {
