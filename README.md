@@ -4,11 +4,21 @@
 
 DOM manipulation with vanilla JavaScript, while easier now than in the past, can still be frustrating. To make interacting with the DOM easier I created this tool, inspired by the classic jQuery, that eases some of the frustration. ReQuery allows users to find node elements by selector or children of previously found elements, add or remove classes (or any other attribute), add event listers, and make AJAX requests
 
-![Gif of gameplay](https://raw.githubusercontent.com/happler/doublintime/master/assets/img/doublin_time.gif)
+![Gif of gameplay](https://raw.githubusercontent.com/happler/ReQuery/master/assets/requery.gif)
 
 ## Technologies
 
 Vanilla JavaScript, lodash.js for Demo: HTML5, CSS3
+
+## How to Use
+
+To use this tool, simply download [this file](..blob/master/lib/requery.js) and put it in your project. In the head of your HTML, include
+
+```html
+<script type="text/javascript" src="./__path__/__to__/__file__/requery.js"> </script>
+```
+
+before your entry point file. Now you can use ReQuery!
 
 ## Implementation
 
