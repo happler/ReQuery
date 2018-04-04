@@ -52,7 +52,8 @@ main {
 header {
   display: flex;
   flex-direction: column;
-  background-color: ghostwhite;
+  align-items: center;
+  /* background-color: ghostwhite; */
   margin: 15px;
 }
 
@@ -64,6 +65,7 @@ header > * {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 
 .add-num__button {
@@ -97,28 +99,51 @@ body {
 
 .reset,
 .check,
-.weather {
-  padding: 2px;
+.weather,
+.add-num__button {
+  padding: 5px;
   border: 1px solid black;
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
+  /* text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, */
+  /* 1px 1px 0 #fff; */
+  width: max-content;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.add-num__button {
+  padding: 5px 10px;
+}
+
+.reset:hover,
+.check:hover,
+.weather:hover,
+.add-num__button:hover {
+  background-color: lightgrey;
 }
 
 .instructions {
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .solved-status {
   text-align: center;
   padding-top: 12px;
+  font-family: "Josefin Sans", sans-serif;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .title {
   font-family: "Courgette", cursive;
-  background-color: ghostwhite;
   font-size: 36px;
   padding: 5px;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .thunderstorm {
@@ -161,15 +186,23 @@ body {
 .portfolio-by {
   font-size: 24px;
   font-family: "Josefin Sans", sans-serif;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .portfolio:hover {
   text-decoration: underline;
   color: darkgrey;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
 .svg-inline--fa:hover {
   color: darkgrey;
+  background-color: black;
+}
+.fa-linkedin {
+  height: 0.875em;
 }
 
 .fab {
