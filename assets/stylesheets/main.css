@@ -112,6 +112,14 @@ body {
   border-radius: 3px;
 }
 
+.title-desc {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
 .add-num__button {
   padding: 5px 10px;
 }
@@ -137,8 +145,17 @@ body {
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff;
 }
+.github-link {
+  text-decoration: underline;
+  color: darkslateblue;
+}
+.github-link:hover {
+  color: dimgrey;
+}
 
 .title {
+  text-align: center;
+
   font-family: "Courgette", cursive;
   font-size: 36px;
   padding: 5px;
