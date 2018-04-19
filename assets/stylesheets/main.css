@@ -216,16 +216,20 @@ body {
     1px 1px 0 #fff;
 }
 
-.svg-inline--fa:hover {
-  color: darkgrey;
-  background-color: black;
+.personal-links__angel {
+  width: auto;
+  height: 50px;
 }
-.fa-linkedin {
-  height: 0.875em;
+.personal-links__linkedin,
+.personal-links__github {
+  width: 50px;
 }
 
-.fab {
-  width: 50px;
+.personal-links__linkedin:hover,
+.personal-links__github:hover,
+.personal-links__angel:hover {
+  filter: invert(40%);
+  /* background-color: black; */
 }
 
 .personal-links {
